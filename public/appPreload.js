@@ -124,6 +124,7 @@ function draw() {
             if(!played){
                 player.triggerAttackRelease(notes[0], "4n");
                 played = true;
+                setTimeout(timeIt ,2000);
             }
            
 
@@ -143,7 +144,7 @@ function draw() {
            
             text('Ready! Go to play!',width/2-90,height/2+100);
            // console.log("Ready for next page")
-            setTimeout(timeIt ,2000);
+           
     }
 }
 
