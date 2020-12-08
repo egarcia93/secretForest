@@ -13,6 +13,7 @@ body{
 .project_canvas{
     text-align: center;
     position: relative;
+    top: 20px;
 
     
 }
