@@ -15,9 +15,13 @@ let poses = [];
 //Synths and effects
 let player;
 let gain;
+let panner;
+let effect1;
 
 let player2;
 let gain2;
+let panner2;
+let effect2;
 
 let bgPlayer;
 let bgGain;
@@ -89,12 +93,14 @@ function setup() {
     gain2 = new Tone.Gain(0.2).toMaster();
     bgGain = new Tone.Gain(0.6).toMaster();
   
-    let effect1 = new Tone.PingPongDelay("8n", 0.6).connect(gain);
-    let effect2 = new Tone.PingPongDelay("8n", 0.6).connect(gain2);
+    effect1 = new Tone.PingPongDelay("8n", 0.6).connect(gain);
+    effect2 = new Tone.PingPongDelay("8n", 0.6).connect(gain2);
 
+    panner =  new Tone.Panner(0).connect(effect1);
+    panner2 =  new Tone.Panner(0).connect(effect2);
 
-    player = new Tone.Synth().connect(effect1);
-    player2 = new Tone.Synth().connect(effect2);
+    player = new Tone.Synth().connect(panner);
+    player2 = new Tone.Synth().connect(panner2);
     
     bgPlayer = new Tone.Player("data/song.mp3").connect(bgGain);
     // play as soon as the buffer is loaded
@@ -202,7 +208,10 @@ function newPose(results){
             //Select and play hexagon
             nearestHexagon.hovered = true;
             nearestHexagon.mine = true;
+            let panPosition = map(pointX,0,width,-1,1);
+            panner.pan= panPosition;
             player.triggerAttackRelease(notes[nearestHexagon.name],"4n");
+           
             oldNear = nearestHexagon
         }
     
@@ -255,6 +264,8 @@ function gotData(data, id) {
         //Select and play hexagon
         theirNearestHexagon.hovered = true;
         theirNearestHexagon.mine = false;
+        let panPosition = map(otherX,0,width,-1,1);
+        panner2.pan= panPosition;
         player2.triggerAttackRelease(notes[theirNearestHexagon.name],1);
         theirOldNear = theirNearestHexagon
         
