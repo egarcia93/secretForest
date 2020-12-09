@@ -1,13 +1,18 @@
+/* No scroll down */
+html{
+  height:100%
+}
+
 body{
     margin: 0;
     padding: 0;
-    font-family: 'Arial';
+    font-family: 'Oleo Script', cursive;
     color:black;
     text-align:center;
-    background-image: url("data/bg002.jpg");
-    background-size: cover;
+
+    background-image: url("data/bg0021.jpg");
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-color: black;
   }
   
   h1{
@@ -17,17 +22,36 @@ body{
   }
   
   .detail p{
-  
+
+    font-family: 'Caveat', cursive;
+    font-family: 'Titillium Web', sans-serif;
+
     display: table; /* keep the background color wrapped tight */
     margin: 0px auto 0px auto; /* keep the table centered */
-    padding:1em;font-size:20px;background-color:rgb(11, 85, 243);color:#ffffff;
+    padding:0.5em;font-size:20px;
+    background-color:rgb(11, 85, 243);
+    color:#ffffff;
 
     position: relative;
-    top: 50%;
+    top: 40%;
     /* margin-top: 500px; */
   }
 
+  .container {
+    display: flex; /* or inline-flex */
+    flex-direction:  column;
+    justify-content: center;
+  }
+  
+  .project_canvas{
+    position: relative;
+    top: 15px;
+}
+
   #poseReady{
+    font-family: 'Caveat', cursive;
+    font-family: 'Titillium Web', sans-serif;
+
     display: table; /* keep the background color wrapped tight */
     margin: 0px auto 0px auto; /* keep the table centered */   
     background-color: rgb(11, 85, 243);
@@ -35,7 +59,7 @@ body{
     padding: 5px;
     border: none;
     font-size: 16px;
-    margin-top:515px;
+    margin-top:45px;
 }
   #poseReady:hover{
     background:black;
@@ -44,10 +68,14 @@ body{
   .footNote{
     color:white;
     font-size: 14px;
-    margin-top: 230px;
-      
+    margin-top: 120px;  
   }
-canvas{
-    margin-top:120px;
+  
+  @media(max-width:660px){
+    .detail{
+        width:400px;
+    }
+    .project_canvas{
+        height:600px;
+    }
   }
-

@@ -84,8 +84,8 @@ function setup() {
 	let counter = 0;
 	for (let y = 0; y < height/4 + s; y += 2*s) {
 		for (let x = 0; x < width + r; x += 3*r) {
-			hexagons.push(new Hexagon(x, y+300, r, counter++,false,true));
-			hexagons.push(new Hexagon(x + 1.5 * r, y + s+300, r, counter++,false,true));
+			hexagons.push(new Hexagon(x, y+200, r, counter++,false,true));
+			hexagons.push(new Hexagon(x + 1.5 * r, y + s+200, r, counter++,false,true));
 		}
 	}
     

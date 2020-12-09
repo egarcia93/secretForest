@@ -19,10 +19,13 @@ let played = false;
 function setup() {
   
     myCanvas = createCanvas(640, 480);
+    //link to html
+    myCanvas.parent("canvas-container");
+
     myVideo = createCapture(VIDEO);
     myVideo.muted = true;
     myVideo.hide();
-    myCanvas.position((windowWidth - width) / 2, 100);
+    //myCanvas.position((windowWidth - width) / 2, 100);
 
     //load ML5
     poseNet = ml5.poseNet(myVideo, modelLoaded);

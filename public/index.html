@@ -6,33 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secret Forest Instruction</title>
     <link href="stylePreload.css" rel="stylesheet" />
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Titillium+Web:ital,wght@1,300&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-
     <div class="container">
         <h1>
-            Secret Forest 
+            Secret Forest
         </h1>
 
-        <section class = "detail">
+
+        <div class="detail">
             <p id="info">
                 Your body is the music instrument.
                 <br>
-                Turn on camera and move your nose horizontally.
+                Turn on the camera and move your nose.
                 <br>
             </p>
-            <button id="poseReady">Click if page don't work</button>
-        </section>
-        <section class = "footNote">
+        </div>
+        <div class="project_canvas" id="canvas-container"></div>
+
+        <button id="poseReady">Click if page don't work</button>
+
+        <section class="footNote">
             <p>This web is for music performance of nature sound.
                 <br>
                 Designed by Enrique & Yiru. IMA LowRes 2020.
             </p>
         </section>
-
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.0.1/Tone.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://p5livemedia.itp.io/simplepeer.min.js"></script>
     <script type="text/javascript" src="https://p5livemedia.itp.io/socket.io.js"></script>
